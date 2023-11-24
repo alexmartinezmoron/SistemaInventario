@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = C:\Users\amartinez\Documents\GitHub\SistemaInventario\SistemaInventario
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/amartinez/Documents/GitHub/SistemaInventario/SistemaInventario/Areas/Admin/Views/Almacen/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWxtYWNlblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/amartinez/Documents/GitHub/SistemaInventario/SistemaInventario/Areas/Admin/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
