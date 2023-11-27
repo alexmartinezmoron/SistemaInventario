@@ -1,0 +1,76 @@
+﻿@model SistemaInventario.Modelos.Almacen
+
+@{
+    ViewData["Title"] = "Upsert";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var titulo = "Crear Almacen";
+}
+
+<h1>Upsert</h1>
+
+<form method="post">
+
+    <div style="padding-left:15%; padding-right:15%; padding-bottom:inherit.4rem;">
+        <div class="row border-0">
+            <div aps-asp-validation-summary="ModelOnly" class="text-danger"></div>
+        </div>
+
+        @if (Model.Id != 0)
+        {
+            // Se trata de una actualizacion
+            titulo = "Actualizar Almacen";
+            <input type="hidden" aps-formaction="Id"/>
+        }
+        <div class="col-12 border-bottom p-0">
+            <h2 class="text-primary"> @titulo </h2>
+        </div>
+
+        <div class="rom mb-2 mt-2">
+            <div class="form-group col-md-6">
+                <label>Nombre</label>
+                <input type="text" asp-for="Name" class="form-control" placeholder="Nombre del Almacen"/>
+                <span asp-validation-for="Name" class=" text-denger"></span>
+            </div>
+        </div>
+
+        <div class="rom mb-2 mt-2">
+            <div class="form-group col-md-6">
+                <label>Descripcion</label>
+                <input type="text" asp-for="Description" class="form-control" placeholder="Descripcion del Almacen" />
+                <span asp-validation-for="Description" class=" text-denger"></span>
+            </div>
+        </div>
+
+        <div class="rom mb-2 mt-2">
+            <div class="form-group col-md-6">
+                <label>Estado</label>
+                <select asp-for="Estado" class="form-select">
+                    <option value="true">Activo</option>
+                    <option value="false">Inactivo</option>
+                </select>
+                <span asp-validation-for="Estado" class=" text-denger"></span>
+            </div>
+        </div>
+        <br />
+
+        <div>
+            @if (Model.Id != 0)
+            {
+                <partial name="_BotonosActualizarYRegresar" model="Model.Id" />
+
+            }
+            else
+            {
+                <partial name="_BotonesCrearYRegresar" />
+
+            }
+        </div>
+
+    </div>
+
+</form>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial">
+}
+
