@@ -20,12 +20,12 @@ namespace SistemaInventario.AccesoDatos.Repositorios
 
         public void Actualizar(Categoria categoria)
         {
-            var acategorianDB = _db.Categorias.FirstOrDefault(a => a.Id == categoria.Id);
+            var categorianDB = _db.Categorias.FirstOrDefault(a => a.Id == categoria.Id);
 
-            if (acategorianDB != null)
+            if (categorianDB != null)
             {
-                acategorianDB.Name = categoria.Name;
-                acategorianDB.Estado = categoria.Estado;
+                categorianDB.Name = categoria.Name;
+                categorianDB.Estado = categoria.Estado;
                 _db.SaveChanges();
             }
         }

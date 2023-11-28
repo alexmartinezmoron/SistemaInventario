@@ -21,6 +21,14 @@
       "PackagePath": "staticwebassets\\js\\Categoria.js"
     },
     {
+      "Id": "C:\\Users\\amartinez\\Documents\\GitHub\\SistemaInventario\\SistemaInventario\\wwwroot\\js\\Marca.js",
+      "PackagePath": "staticwebassets\\js\\Marca.js"
+    },
+    {
+      "Id": "C:\\Users\\amartinez\\Documents\\GitHub\\SistemaInventario\\SistemaInventario\\wwwroot\\js\\Producto.js",
+      "PackagePath": "staticwebassets\\js\\Producto.js"
+    },
+    {
       "Id": "C:\\Users\\amartinez\\Documents\\GitHub\\SistemaInventario\\SistemaInventario\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
