@@ -9,25 +9,23 @@ using System.Threading.Tasks;
 
 namespace SistemaInventario.AccesoDatos.Repositorios
 {
-    public class AlmacenRepositorio : Repositorio<Almacen>, IAlmacenRepositorio
+    public class CategoriaRepositorio : Repositorio<Categoria>, ICategoriaRepositorio
     {
-
         private readonly ApplicationDbContext _db;
 
-        public AlmacenRepositorio(ApplicationDbContext db) : base(db)
+        public CategoriaRepositorio(ApplicationDbContext db) : base(db)
         {
             _db = db;
         }
 
-        public void Actualizar(Almacen almacen)
+        public void Actualizar(Categoria categoria)
         {
-            var almacenDB = _db.Almacenes.FirstOrDefault(a => a.Id == almacen.Id);
+            var acategorianDB = _db.Categorias.FirstOrDefault(a => a.Id == categoria.Id);
 
-            if (almacenDB != null)
+            if (acategorianDB != null)
             {
-                almacenDB.Name = almacen.Name;
-                almacenDB.Description = almacen.Description;
-                almacenDB.Estado = almacen.Estado;
+                acategorianDB.Name = categoria.Name;
+                acategorianDB.Estado = categoria.Estado;
                 _db.SaveChanges();
             }
         }

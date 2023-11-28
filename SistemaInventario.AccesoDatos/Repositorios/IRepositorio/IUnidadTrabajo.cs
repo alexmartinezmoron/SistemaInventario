@@ -9,6 +9,7 @@ namespace SistemaInventario.AccesoDatos.Repositorios.IRepositorio
     public interface IUnidadTrabajo : IDisposable
     {
         IAlmacenRepositorio Almacen{ get; }
+        ICategoriaRepositorio Categoria { get; }
 
         Task Guardar();
     }

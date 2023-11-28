@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\js\\Almacen.js"
     },
     {
+      "Id": "C:\\Users\\amartinez\\Documents\\GitHub\\SistemaInventario\\SistemaInventario\\wwwroot\\js\\Categoria.js",
+      "PackagePath": "staticwebassets\\js\\Categoria.js"
+    },
+    {
       "Id": "C:\\Users\\amartinez\\Documents\\GitHub\\SistemaInventario\\SistemaInventario\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

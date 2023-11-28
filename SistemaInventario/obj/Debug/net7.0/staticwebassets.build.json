@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Rm99S7EiNBQVGdB2QlmRwiT76yo/G+56Wr97dkE0ZWo=",
+  "Hash": "ktbxPOklpMCXiQ4CYRF/bLiUxKgbtbFYW1frGwaJmLY=",
   "Source": "SistemaInventario",
   "BasePath": "_content/SistemaInventario",
   "Mode": "Default",
@@ -1250,6 +1250,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\Almacen.js"
+    },
+    {
+      "Identity": "C:\\Users\\amartinez\\Documents\\GitHub\\SistemaInventario\\SistemaInventario\\wwwroot\\js\\Categoria.js",
+      "SourceId": "SistemaInventario",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\amartinez\\Documents\\GitHub\\SistemaInventario\\SistemaInventario\\wwwroot\\",
+      "BasePath": "_content/SistemaInventario",
+      "RelativePath": "js/Categoria.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Categoria.js"
     },
     {
       "Identity": "C:\\Users\\amartinez\\Documents\\GitHub\\SistemaInventario\\SistemaInventario\\wwwroot\\js\\site.js",

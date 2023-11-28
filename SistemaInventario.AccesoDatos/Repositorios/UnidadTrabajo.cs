@@ -12,7 +12,8 @@ namespace SistemaInventario.AccesoDatos.Repositorios
     {
                 
         private readonly ApplicationDbContext _db;
-        public IAlmacenRepositorio Almacen { get; private set; }    
+        public IAlmacenRepositorio Almacen { get; private set; }  
+        public ICategoriaRepositorio Categoria { get; private set; }
 
 
         // inicializamos nuestro db y nuestros repositorios
@@ -20,6 +21,7 @@ namespace SistemaInventario.AccesoDatos.Repositorios
         {
             _db = db;
             Almacen = new AlmacenRepositorio(_db);
+            Categoria = new CategoriaRepositorio(_db);
         }
 
 
