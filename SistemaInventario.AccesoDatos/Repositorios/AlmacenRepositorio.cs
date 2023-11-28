@@ -27,7 +27,7 @@ namespace SistemaInventario.AccesoDatos.Repositorios
             {
                 almacenDB.Name = almacen.Name;
                 almacenDB.Description = almacen.Description;
-                almacen.Estado = almacen.Estado;
+                almacenDB.Estado = almacen.Estado;
                 _db.SaveChanges();
             }
         }

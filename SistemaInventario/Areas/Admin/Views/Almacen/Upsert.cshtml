@@ -19,7 +19,7 @@
         {
             // Se trata de una actualizacion
             titulo = "Actualizar Almacen";
-            <input type="hidden" aps-formaction="Id"/>
+            <input type="hidden" aps-formaction="Id" id="id"/>
         }
         <div class="col-12 border-bottom p-0">
             <h2 class="text-primary"> @titulo </h2>
@@ -28,8 +28,8 @@
         <div class="rom mb-2 mt-2">
             <div class="form-group col-md-6">
                 <label>Nombre</label>
-                <input type="text" asp-for="Name" class="form-control" placeholder="Nombre del Almacen"/>
-                <span asp-validation-for="Name" class=" text-denger"></span>
+                <input type="text" asp-for="Name" class="form-control" placeholder="Nombre del Almacen" id="nombre" />
+                <span asp-validation-for="Name" class=" text-danger"></span>
             </div>
         </div>
 
@@ -37,7 +37,7 @@
             <div class="form-group col-md-6">
                 <label>Descripcion</label>
                 <input type="text" asp-for="Description" class="form-control" placeholder="Descripcion del Almacen" />
-                <span asp-validation-for="Description" class=" text-denger"></span>
+                <span asp-validation-for="Description" class=" text-danger"></span>
             </div>
         </div>
 
@@ -45,10 +45,10 @@
             <div class="form-group col-md-6">
                 <label>Estado</label>
                 <select asp-for="Estado" class="form-select">
-                    <option value="true">Activo</option>
                     <option value="false">Inactivo</option>
+                    <option value="true">Activo</option>                    
                 </select>
-                <span asp-validation-for="Estado" class=" text-denger"></span>
+                <span asp-validation-for="Estado" class=" text-danger"></span>
             </div>
         </div>
         <br />
@@ -72,5 +72,28 @@
 
 @section Scripts{
     <partial name="_ValidationScriptsPartial">
+
+        <script>
+            document.getElementById("nombre").addEventListener('change', function () {
+                validarNombre();
+            });
+
+            function validarNombre() {
+                var url = '@Url.Content("~/")' + "Admin/Almacen/ValidarNombre";
+                var id = '#id';
+                var nombre = '#nombre';
+
+                $.getJSON(url, { id: $(id).val(), nombre: $(nombre).val() }, function (data) {
+                    $.each(data, function (key, value) {
+                        if (value) {
+                            var nombre = document.getElementById("nombre");
+                            swal("Error", "Nombre ya Existe", "error");
+                            nombre.value = "";
+                        }
+                    });
+                })
+
+            }
+        </script>
 }
 

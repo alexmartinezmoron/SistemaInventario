@@ -49,6 +49,9 @@
     </header>
     <div class="container">
         <main role="main" class="pb-3">
+            <!-- Invocamos a las vista parciales que necesitemos antes del rederbody-->
+            <partial name="_Notificaciones" />
+
             @RenderBody()
         </main>
     </div>
