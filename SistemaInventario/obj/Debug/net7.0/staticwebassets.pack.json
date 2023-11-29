@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\amartinez\\Documents\\GitHub\\SistemaInventario\\SistemaInventario\\wwwroot\\imagenes\\producto\\802e88c6-6f98-43bd-ad91-8667dbd23324.JPG",
+      "PackagePath": "staticwebassets\\imagenes\\producto\\802e88c6-6f98-43bd-ad91-8667dbd23324.JPG"
+    },
+    {
+      "Id": "C:\\Users\\amartinez\\Documents\\GitHub\\SistemaInventario\\SistemaInventario\\wwwroot\\imagenes\\producto\\eec3e2cf-fb07-41b5-b5fc-9ddad7f948bf.JPG",
+      "PackagePath": "staticwebassets\\imagenes\\producto\\eec3e2cf-fb07-41b5-b5fc-9ddad7f948bf.JPG"
+    },
+    {
       "Id": "C:\\Users\\amartinez\\Documents\\GitHub\\SistemaInventario\\SistemaInventario\\wwwroot\\js\\Almacen.js",
       "PackagePath": "staticwebassets\\js\\Almacen.js"
     },

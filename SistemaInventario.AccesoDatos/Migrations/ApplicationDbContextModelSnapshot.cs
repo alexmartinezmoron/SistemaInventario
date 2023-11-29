@@ -306,7 +306,7 @@ namespace SistemaInventario.AccesoDatos.Migrations
                     b.Property<double>("Costo")
                         .HasColumnType("float");
 
-                    b.Property<string>("Description")
+                    b.Property<string>("Descripcion")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");

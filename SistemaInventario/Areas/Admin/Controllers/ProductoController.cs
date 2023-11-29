@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing.Constraints;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 using SistemaInventario.AccesoDatos.Repositorios.IRepositorio;
+using SistemaInventario.Areas.Admin.ViewModels;
 using SistemaInventario.Modelos;
 using SistemaInventario.Utilidades;
 
@@ -9,10 +12,12 @@ namespace SistemaInventario.Areas.Admin.Controllers
     public class ProductoController : Controller
     {
         private readonly IUnidadTrabajo _unidadTrabajo;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public ProductoController(IUnidadTrabajo unidadTrabajo)
+        public ProductoController(IUnidadTrabajo unidadTrabajo, IWebHostEnvironment webHostEnvironment)
         {
             _unidadTrabajo = unidadTrabajo;
+            _webHostEnvironment = webHostEnvironment;
         }
 
         public IActionResult Index()
@@ -22,11 +27,117 @@ namespace SistemaInventario.Areas.Admin.Controllers
 
         public async Task<IActionResult> Upsert(int? id)
         {
-       
-            return View();
+
+            ProductoVM productoVM = new ProductoVM()
+            {
+                Producto = new Producto(),
+                CategoriaLista = _unidadTrabajo.Producto.ObtenerTodosDropDownLista("Categoria"),
+                MarcaLista = _unidadTrabajo.Producto.ObtenerTodosDropDownLista("Marca"),
+               
+            };
+
+            if (id == null)
+            {
+                // Crear nuevo Producto
+                productoVM.Producto.Estado = true;
+                return View(productoVM);
+            }
+            else
+            {
+                productoVM.Producto = await _unidadTrabajo.Producto.Obtener(id.GetValueOrDefault());
+                if (productoVM.Producto == null)
+                {
+                    return NotFound();
+                }
+                return View(productoVM);
+            }
         }
 
         //Upsert post 
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Upsert(ProductoVM productoVM)
+        {
+            //if (ModelState.IsValid)
+            //{
+                var files = HttpContext.Request.Form.Files;
+                string webRootPath = _webHostEnvironment.WebRootPath;
+
+                if (productoVM.Producto.Id == 0)
+                {
+                    // Crear
+                    string upload = webRootPath + DS.ImagenRuta;
+                    string fileName = Guid.NewGuid().ToString();
+                    string extension = Path.GetExtension(files[0].FileName);
+
+                    using (var fileStream = new FileStream(Path.Combine(upload, fileName + extension), FileMode.Create))
+                    {
+                        files[0].CopyTo(fileStream);
+                    }
+                    productoVM.Producto.ImagenUrl = fileName + extension;
+                    await _unidadTrabajo.Producto.Agregar(productoVM.Producto);
+                }
+                else
+                {
+                    // Actualizar
+                    var objProducto = await _unidadTrabajo.Producto.ObtenerPrimero(p => p.Id == productoVM.Producto.Id, isTraking: false);
+                    if (files.Count > 0)  // Si se carga una nueva Imagen para el producto existente
+                    {
+                        string upload = webRootPath + DS.ImagenRuta;
+                        string fileNAme = Guid.NewGuid().ToString();
+                        string extension = Path.GetExtension(files[0].FileName);
+
+                        //Borrar la imagen anterior
+                        var anteriorFile = Path.Combine(upload, objProducto.ImagenUrl);
+                        if (System.IO.File.Exists(anteriorFile))
+                        {
+                            System.IO.File.Delete(anteriorFile);
+                        }
+                        using (var fileStream = new FileStream(Path.Combine(upload, fileNAme + extension), FileMode.Create))
+                        {
+                            files[0].CopyTo(fileStream);
+                        }
+                        productoVM.Producto.ImagenUrl = fileNAme + extension;
+                    } // Caso contrario no se carga una nueva imagen
+                    else
+                    {
+                        productoVM.Producto.ImagenUrl = objProducto.ImagenUrl;
+                    }
+                    _unidadTrabajo.Producto.Actualizar(productoVM.Producto);
+                }
+                TempData[DS.Exitosa] = "Transaccion Exitosa!";
+                await _unidadTrabajo.Guardar();
+                //return View("Index");
+                return RedirectToAction("Index");
+
+            //}  // If not Valid
+            //productoVM.CategoriaLista = _unidadTrabajo.Producto.ObtenerTodosDropDownLista("Categoria");
+            //productoVM.MarcaLista = _unidadTrabajo.Producto.ObtenerTodosDropDownLista("Marca");
+            //return View(productoVM);
+        }
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> Upsert(ProductoVM productoVM)
+        //{
+
+        //    if (ModelState.IsValid)
+        //    {
+
+        //        // Crear                        
+
+        //        await _unidadTrabajo.Producto.Agregar(productoVM.Producto);
+
+
+        //        TempData[DS.Exitosa] = "Transaccion Exitosa!";
+        //        await _unidadTrabajo.Guardar();
+        //        //return View("Index");
+        //        return RedirectToAction("Index");
+        //    }
+        //    return View(productoVM);
+        //}
+
 
 
 

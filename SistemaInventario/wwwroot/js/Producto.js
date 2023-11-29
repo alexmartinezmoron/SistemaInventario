@@ -26,8 +26,8 @@ function loadDataTable() {
         "columns": [
             { "data": "numeroSerie" },
             { "data": "descripcion" },
-            { "data": "categoria.nombre" },
-            { "data": "marca.nombre" },
+            { "data": "categoria.name" },
+            { "data": "marca.name" },
             {
                 "data": "precio", "className": "text-end",
                 "render": function (data) {

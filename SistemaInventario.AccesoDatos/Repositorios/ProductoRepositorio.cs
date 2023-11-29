@@ -1,4 +1,5 @@
-﻿using SistemaInventario.AccesoDatos.Data;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using SistemaInventario.AccesoDatos.Data;
 using SistemaInventario.AccesoDatos.Repositorios.IRepositorio;
 using SistemaInventario.Modelos;
 using System;
@@ -28,7 +29,7 @@ namespace SistemaInventario.AccesoDatos.Repositorios
                     productoDB.ImagenUrl = producto.ImagenUrl;
                 }
                 productoDB.NumeroSerie = producto.NumeroSerie;
-                productoDB.Description = producto.NumeroSerie;
+                productoDB.Descripcion = producto.Descripcion;
                 productoDB.Precio = producto.Precio;
                 productoDB.Costo = producto.Costo;
                 productoDB.CategoriaId = producto.CategoriaId;
@@ -39,6 +40,27 @@ namespace SistemaInventario.AccesoDatos.Repositorios
                 _db.SaveChanges();
 
             }
+        }
+
+        public IEnumerable<SelectListItem> ObtenerTodosDropDownLista(string obj)
+        {
+            if (obj == "Categoria")
+            {
+                return _db.Categorias.Where(c => c.Estado == true).Select(c => new SelectListItem
+                {
+                    Text = c.Name,
+                    Value = c.Id.ToString()
+                });
+            }
+            if (obj == "Marca")
+            {
+                return _db.Marcas.Where(c => c.Estado == true).Select(c => new SelectListItem
+                {
+                    Text = c.Name,
+                    Value = c.Id.ToString()
+                });
+            }
+            return null;
         }
     }
 }
