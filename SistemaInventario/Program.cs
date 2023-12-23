@@ -1,8 +1,10 @@
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using SistemaInventario.AccesoDatos.Data;
 using SistemaInventario.AccesoDatos.Repositorios;
 using SistemaInventario.AccesoDatos.Repositorios.IRepositorio;
+using SistemaInventario.Utilidades;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,7 +15,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = false)  // dejamos en false ya que de momento no vamos a validar el email
+    .AddDefaultTokenProviders()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
@@ -22,6 +25,10 @@ builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 // AddScoped  permite que la instacia en servicio se cree una vez y pueda seguirse usando las veces que se la requiera
 
 builder.Services.AddScoped<IUnidadTrabajo, UnidadTrabajo>();
+
+// agregamos el servicio de la paginas razors
+builder.Services.AddRazorPages();
+builder.Services.AddSingleton<IEmailSender, EmailSender>();
 
 var app = builder.Build();
 

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "9SWfyZdpe5gdVZMKtU5BzS0tQBVLyQyiALCUhrI85mihsoKBPjTODtxqw1YaPlvPmTr9hiOSGFt1gGGt/9AFig==",
+  "dgSpecHash": "9QuIx4HFnkM8VexEynFxJhK5KulL0x/oiQxdt4JGJqPW/EcIYTrHwiEhEtYZzOJKy0UOdlaPs0zsnLYgmJvadQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\amartinez\\Documents\\GitHub\\SistemaInventario\\SistemaInventario.AccesoDatos\\SistemaInventario.AccesoDatos.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,7 @@
     "C:\\Users\\amartinez\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\7.0.14\\microsoft.aspnetcore.cryptography.internal.7.0.14.nupkg.sha512",
     "C:\\Users\\amartinez\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\7.0.14\\microsoft.aspnetcore.cryptography.keyderivation.7.0.14.nupkg.sha512",
     "C:\\Users\\amartinez\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\7.0.14\\microsoft.aspnetcore.identity.entityframeworkcore.7.0.14.nupkg.sha512",
+    "C:\\Users\\amartinez\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.14\\microsoft.aspnetcore.identity.ui.7.0.14.nupkg.sha512",
     "C:\\Users\\amartinez\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\6.0.0\\microsoft.aspnetcore.mvc.razor.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\amartinez\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.runtimecompilation\\7.0.14\\microsoft.aspnetcore.mvc.razor.runtimecompilation.7.0.14.nupkg.sha512",
     "C:\\Users\\amartinez\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\6.0.0\\microsoft.aspnetcore.razor.language.6.0.0.nupkg.sha512",
@@ -34,6 +35,8 @@
     "C:\\Users\\amartinez\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
     "C:\\Users\\amartinez\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\amartinez\\.nuget\\packages\\microsoft.extensions.dependencymodel\\7.0.0\\microsoft.extensions.dependencymodel.7.0.0.nupkg.sha512",
+    "C:\\Users\\amartinez\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\7.0.0\\microsoft.extensions.fileproviders.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\amartinez\\.nuget\\packages\\microsoft.extensions.fileproviders.embedded\\7.0.14\\microsoft.extensions.fileproviders.embedded.7.0.14.nupkg.sha512",
     "C:\\Users\\amartinez\\.nuget\\packages\\microsoft.extensions.identity.core\\7.0.14\\microsoft.extensions.identity.core.7.0.14.nupkg.sha512",
     "C:\\Users\\amartinez\\.nuget\\packages\\microsoft.extensions.identity.stores\\7.0.14\\microsoft.extensions.identity.stores.7.0.14.nupkg.sha512",
     "C:\\Users\\amartinez\\.nuget\\packages\\microsoft.extensions.logging\\7.0.0\\microsoft.extensions.logging.7.0.0.nupkg.sha512",

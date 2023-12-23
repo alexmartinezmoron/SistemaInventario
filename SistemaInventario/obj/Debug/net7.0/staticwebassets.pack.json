@@ -13,12 +13,56 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\amartinez\\Documents\\GitHub\\SistemaInventario\\SistemaInventario\\wwwroot\\imagenes\\producto\\802e88c6-6f98-43bd-ad91-8667dbd23324.JPG",
-      "PackagePath": "staticwebassets\\imagenes\\producto\\802e88c6-6f98-43bd-ad91-8667dbd23324.JPG"
+      "Id": "C:\\Users\\amartinez\\Documents\\GitHub\\SistemaInventario\\SistemaInventario\\wwwroot\\imagenes\\icono.ico",
+      "PackagePath": "staticwebassets\\imagenes\\icono.ico"
+    },
+    {
+      "Id": "C:\\Users\\amartinez\\Documents\\GitHub\\SistemaInventario\\SistemaInventario\\wwwroot\\imagenes\\icono.png",
+      "PackagePath": "staticwebassets\\imagenes\\icono.png"
+    },
+    {
+      "Id": "C:\\Users\\amartinez\\Documents\\GitHub\\SistemaInventario\\SistemaInventario\\wwwroot\\imagenes\\producto\\02a3cf4b-1267-456d-8ff2-b071131a0c76.JPG",
+      "PackagePath": "staticwebassets\\imagenes\\producto\\02a3cf4b-1267-456d-8ff2-b071131a0c76.JPG"
+    },
+    {
+      "Id": "C:\\Users\\amartinez\\Documents\\GitHub\\SistemaInventario\\SistemaInventario\\wwwroot\\imagenes\\producto\\0b2c3458-d6db-45dc-b978-5f36d61ea94f.JPG",
+      "PackagePath": "staticwebassets\\imagenes\\producto\\0b2c3458-d6db-45dc-b978-5f36d61ea94f.JPG"
+    },
+    {
+      "Id": "C:\\Users\\amartinez\\Documents\\GitHub\\SistemaInventario\\SistemaInventario\\wwwroot\\imagenes\\producto\\0bf33051-c9d8-4bf4-bd5a-afc2e5529bb3.JPG",
+      "PackagePath": "staticwebassets\\imagenes\\producto\\0bf33051-c9d8-4bf4-bd5a-afc2e5529bb3.JPG"
+    },
+    {
+      "Id": "C:\\Users\\amartinez\\Documents\\GitHub\\SistemaInventario\\SistemaInventario\\wwwroot\\imagenes\\producto\\1e386920-44f9-4cef-add4-b7f1d75493fc.JPG",
+      "PackagePath": "staticwebassets\\imagenes\\producto\\1e386920-44f9-4cef-add4-b7f1d75493fc.JPG"
+    },
+    {
+      "Id": "C:\\Users\\amartinez\\Documents\\GitHub\\SistemaInventario\\SistemaInventario\\wwwroot\\imagenes\\producto\\3a7e7923-c2cd-4b14-a402-3e4cf8444ade.JPG",
+      "PackagePath": "staticwebassets\\imagenes\\producto\\3a7e7923-c2cd-4b14-a402-3e4cf8444ade.JPG"
+    },
+    {
+      "Id": "C:\\Users\\amartinez\\Documents\\GitHub\\SistemaInventario\\SistemaInventario\\wwwroot\\imagenes\\producto\\56c545b6-549f-4750-98bd-1fdb37047e55.JPG",
+      "PackagePath": "staticwebassets\\imagenes\\producto\\56c545b6-549f-4750-98bd-1fdb37047e55.JPG"
+    },
+    {
+      "Id": "C:\\Users\\amartinez\\Documents\\GitHub\\SistemaInventario\\SistemaInventario\\wwwroot\\imagenes\\producto\\77ea3986-61ee-44bc-bc37-0f87f98660bf.JPG",
+      "PackagePath": "staticwebassets\\imagenes\\producto\\77ea3986-61ee-44bc-bc37-0f87f98660bf.JPG"
+    },
+    {
+      "Id": "C:\\Users\\amartinez\\Documents\\GitHub\\SistemaInventario\\SistemaInventario\\wwwroot\\imagenes\\producto\\8ad946c6-6ea7-4050-be88-c58912d4b4a1.JPG",
+      "PackagePath": "staticwebassets\\imagenes\\producto\\8ad946c6-6ea7-4050-be88-c58912d4b4a1.JPG"
     },
     {
       "Id": "C:\\Users\\amartinez\\Documents\\GitHub\\SistemaInventario\\SistemaInventario\\wwwroot\\imagenes\\producto\\eec3e2cf-fb07-41b5-b5fc-9ddad7f948bf.JPG",
       "PackagePath": "staticwebassets\\imagenes\\producto\\eec3e2cf-fb07-41b5-b5fc-9ddad7f948bf.JPG"
+    },
+    {
+      "Id": "C:\\Users\\amartinez\\Documents\\GitHub\\SistemaInventario\\SistemaInventario\\wwwroot\\imagenes\\producto\\f57634b8-e932-437f-8e3b-86ec6b2b1b70.JPG",
+      "PackagePath": "staticwebassets\\imagenes\\producto\\f57634b8-e932-437f-8e3b-86ec6b2b1b70.JPG"
+    },
+    {
+      "Id": "C:\\Users\\amartinez\\Documents\\GitHub\\SistemaInventario\\SistemaInventario\\wwwroot\\imagenes\\producto\\fb80b92e-3f8f-4785-ac16-c5fca5ef8838.JPG",
+      "PackagePath": "staticwebassets\\imagenes\\producto\\fb80b92e-3f8f-4785-ac16-c5fca5ef8838.JPG"
     },
     {
       "Id": "C:\\Users\\amartinez\\Documents\\GitHub\\SistemaInventario\\SistemaInventario\\wwwroot\\js\\Almacen.js",
@@ -35,6 +79,10 @@
     {
       "Id": "C:\\Users\\amartinez\\Documents\\GitHub\\SistemaInventario\\SistemaInventario\\wwwroot\\js\\Producto.js",
       "PackagePath": "staticwebassets\\js\\Producto.js"
+    },
+    {
+      "Id": "C:\\Users\\amartinez\\Documents\\GitHub\\SistemaInventario\\SistemaInventario\\wwwroot\\js\\Usuario.js",
+      "PackagePath": "staticwebassets\\js\\Usuario.js"
     },
     {
       "Id": "C:\\Users\\amartinez\\Documents\\GitHub\\SistemaInventario\\SistemaInventario\\wwwroot\\js\\site.js",

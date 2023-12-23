@@ -33,7 +33,8 @@ namespace SistemaInventario.Areas.Admin.Controllers
                 Producto = new Producto(),
                 CategoriaLista = _unidadTrabajo.Producto.ObtenerTodosDropDownLista("Categoria"),
                 MarcaLista = _unidadTrabajo.Producto.ObtenerTodosDropDownLista("Marca"),
-               
+                PadreLista = _unidadTrabajo.Producto.ObtenerTodosDropDownLista("Producto"),
+
             };
 
             if (id == null)
@@ -59,8 +60,8 @@ namespace SistemaInventario.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Upsert(ProductoVM productoVM)
         {
-            //if (ModelState.IsValid)
-            //{
+            if (ModelState.IsValid)
+            {
                 var files = HttpContext.Request.Form.Files;
                 string webRootPath = _webHostEnvironment.WebRootPath;
 
@@ -111,34 +112,14 @@ namespace SistemaInventario.Areas.Admin.Controllers
                 //return View("Index");
                 return RedirectToAction("Index");
 
-            //}  // If not Valid
-            //productoVM.CategoriaLista = _unidadTrabajo.Producto.ObtenerTodosDropDownLista("Categoria");
-            //productoVM.MarcaLista = _unidadTrabajo.Producto.ObtenerTodosDropDownLista("Marca");
-            //return View(productoVM);
+            }  // If not Valid
+            productoVM.CategoriaLista = _unidadTrabajo.Producto.ObtenerTodosDropDownLista("Categoria");
+            productoVM.MarcaLista = _unidadTrabajo.Producto.ObtenerTodosDropDownLista("Marca");
+            productoVM.PadreLista = _unidadTrabajo.Producto.ObtenerTodosDropDownLista("Producto");
+            return View(productoVM);
         }
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Upsert(ProductoVM productoVM)
-        //{
-
-        //    if (ModelState.IsValid)
-        //    {
-
-        //        // Crear                        
-
-        //        await _unidadTrabajo.Producto.Agregar(productoVM.Producto);
-
-
-        //        TempData[DS.Exitosa] = "Transaccion Exitosa!";
-        //        await _unidadTrabajo.Guardar();
-        //        //return View("Index");
-        //        return RedirectToAction("Index");
-        //    }
-        //    return View(productoVM);
-        //}
-
-
+      
 
 
         #region API
@@ -157,14 +138,25 @@ namespace SistemaInventario.Areas.Admin.Controllers
         {
             var entityType = _unidadTrabajo.Producto;
             var tableName = entityType.GetType().Name;
-            /// tableName = almacenRepositorio
-
+            
             var nombre = "Producto";
             var modelDb = await _unidadTrabajo.Producto.Obtener(id);
             if (modelDb == null)
             {
                 return Json(new { success = false, message = $"Error al borrar {nombre}" });
             }
+
+            // Eliminar imagen antes de aliminar el producto ya que necesitamos la url almacenada en la bbdd
+            string upload = _webHostEnvironment.WebRootPath + DS.ImagenRuta;
+            var anteriorFile = Path.Combine(upload, modelDb.ImagenUrl);
+
+            if (System.IO.File.Exists(anteriorFile))
+            {
+                System.IO.File.Delete(anteriorFile);
+            }
+
+            // Eliminamos el producto
+
             _unidadTrabajo.Producto.Remover(modelDb);
             await _unidadTrabajo.Guardar();
             return Json(new { success = true, message = $"{nombre} borrado exitosamente" });

@@ -21,3 +21,4 @@ C:\Users\amartinez\Documents\GitHub\SistemaInventario\SistemaInventario.Utilidad
 C:\Users\amartinez\Documents\GitHub\SistemaInventario\SistemaInventario.Utilidades\obj\Debug\net7.0\refint\SistemaInventario.Utilidades.dll
 C:\Users\amartinez\Documents\GitHub\SistemaInventario\SistemaInventario.Utilidades\obj\Debug\net7.0\SistemaInventario.Utilidades.pdb
 C:\Users\amartinez\Documents\GitHub\SistemaInventario\SistemaInventario.Utilidades\obj\Debug\net7.0\ref\SistemaInventario.Utilidades.dll
+C:\Users\amartinez\Documents\GitHub\SistemaInventario\SistemaInventario.Utilidades\obj\Debug\net7.0\SistemaInventario.Utilidades.csproj.AssemblyReference.cache

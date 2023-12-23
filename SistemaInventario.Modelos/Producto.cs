@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,24 +28,33 @@ namespace SistemaInventario.Modelos
         [Required(ErrorMessage = "Costo es Requerido")]
         public double Costo { get; set; }
 
+        
         public string ImagenUrl { get; set; }
 
         [Required(ErrorMessage = "Estado requerido")]
         public bool Estado { get; set; }
 
-        
+
         /// Relaciones
         
         public int CategoriaId { get; set; }
-        public Categoria Categoria { get; set; }        
 
+        [ValidateNever]
+        public Categoria Categoria { get; set; }
+
+
+        [Required(ErrorMessage = "Marca es Requerido")]
         public int MarcaId { get; set; }
+
+        [ValidateNever]       
         public Marca Marca { get; set; }
 
         // Recursividad
+        [ValidateNever]
         public int? PadreId { get; set; }
 
         //Navegacion
+        [ValidateNever]
         public virtual Producto Padre { get; set; }
     }
 }
